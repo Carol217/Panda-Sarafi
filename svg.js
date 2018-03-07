@@ -43,7 +43,7 @@ var svg_clicked = function(e){
     console.log(this);
     console.log(e.target == this);
     if (e.target == this){  //<-- toElement is undefined
-	console.log("coords: ", e.offsetX, ", ", e.offsetY;
+	console.log("coords: ", e.offsetX, ", ", e.offsetY);
 	drawDot(e.offsetX,e.offsetY);
     };
 }
