@@ -50,4 +50,4 @@ var svg_clicked = function(e){
 }
 
 clear.addEventListener("click", clearScreen)
-pic.addEventListener("click", clicked)
+pic.addEventListener("click", svg_clicked)
