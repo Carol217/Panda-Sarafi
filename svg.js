@@ -19,8 +19,13 @@ var clearScreen = function(e){
 
 //a circle has been clicked -- two paths: Change or Die
 var circle_clicked = function(e){
-
-
+    if (this.getAttribute('fill') == 'red') {
+        this.setAttribute('fill', 'green');
+        this.setAttribute('cx', Math.random() * 485 + 15);
+        this.setAttribute('cy', Math.random() * 485 + 15);
+    } else {
+        this.setAttribute('fill', 'red');
+    }
 }
 
 
@@ -33,7 +38,7 @@ var drawDot = function(x,y){
     cl.setAttribute("fill", "green");
     pic.appendChild(cl);
     //add event listener to circle
-    //cl.addEventListener('click', circle_clicked);
+    cl.addEventListener('click', circle_clicked);
     return
 }
 
@@ -43,8 +48,8 @@ var svg_clicked = function(e){
     console.log(this);
     console.log(e.target == this);
     if (e.target == this){  //<-- toElement is undefined
-	console.log("coords: ", e.offsetX, ", ", e.offsetY);
-	drawDot(e.offsetX,e.offsetY);
+        console.log("coords: ", e.offsetX, ", ", e.offsetY);
+        drawDot(e.offsetX,e.offsetY);
     };
 }
 
